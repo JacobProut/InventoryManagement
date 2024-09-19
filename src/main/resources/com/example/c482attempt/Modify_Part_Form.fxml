@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.c482attempt.modifyPartFormController">
+   <children>
+      <VBox layoutX="88.0" layoutY="103.0" prefHeight="194.0" prefWidth="423.0">
+         <children>
+            <GridPane prefHeight="180.0" prefWidth="336.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="115.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="101.0" minWidth="10.0" prefWidth="97.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="51.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="9.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID" />
+                  <Label text="Name" GridPane.rowIndex="1" />
+                  <Label text="Inv" GridPane.rowIndex="2" />
+                  <Label text="Price/Cost" GridPane.rowIndex="3" />
+                  <Label text="Max" GridPane.rowIndex="4" />
+                  <Label fx:id="modifyPartRadioLabelChange" text="Machine ID" GridPane.rowIndex="5" />
+                  <TextField fx:id="modifyPartId" editable="false" promptText="Auto Gen-Disabled" GridPane.columnIndex="1" />
+                  <TextField fx:id="modifyPartName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="modifyPartInv" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="modifyPartPrice" prefHeight="25.0" prefWidth="118.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="modifyPartMax" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="modifyPartMachineId" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label prefHeight="17.0" prefWidth="24.0" text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="modifyPartMin" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+      <HBox layoutX="45.0" layoutY="51.0" prefHeight="24.0" prefWidth="390.0" spacing="50.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Modify Part">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Text>
+            <RadioButton fx:id="radioButtonInHouse" mnemonicParsing="false" onAction="#radioButtonActionInHouse" selected="true" text="In-House">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radioButton" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="radioButtonOutsourced" mnemonicParsing="false" onAction="#radioButtonActionOutsourced" text="Outsourced" toggleGroup="$radioButton" />
+         </children>
+      </HBox>
+      <HBox layoutX="332.0" layoutY="316.0" prefHeight="25.0" prefWidth="137.0" spacing="20.0">
+         <children>
+            <Button fx:id="saveButton" mnemonicParsing="false" onAction="#saveButton" text="Save" />
+            <Button fx:id="cancelButton" mnemonicParsing="false" onAction="#cancelButton" text="Cancel" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
